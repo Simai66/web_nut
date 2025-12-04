@@ -165,103 +165,106 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
                     </button>
                 </div>
 
-                <!-- Filter Section -->
-                <div class="card" style="margin-bottom: 1.5rem; padding: 1.5rem;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; align-items: end;">
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label class="form-label" style="font-size: 0.85rem;">หมวดหมู่</label>
-                            <select id="filterCategory" class="form-control" onchange="filterProducts()">
-                                <option value="">ทั้งหมด</option>
-                                <?php foreach ($categories as $cat): ?>
-                                    <option value="<?php echo htmlspecialchars($cat); ?>"><?php echo htmlspecialchars($cat); ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label class="form-label" style="font-size: 0.85rem;">สถานะ</label>
-                            <select id="filterStatus" class="form-control" onchange="filterProducts()">
-                                <option value="">ทั้งหมด</option>
-                                <option value="ready">พร้อมขาย (Stock 10+)</option>
-                                <option value="low">ใกล้หมด (Stock < 10)</option>
-                                <option value="out">สินค้าหมด (Stock 0)</option>
-                            </select>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label class="form-label" style="font-size: 0.85rem;">ราคา (Min - Max)</label>
-                            <div style="display: flex; gap: 0.5rem;">
-                                <input type="number" id="filterPriceMin" class="form-control" placeholder="Min" oninput="filterProducts()">
-                                <input type="number" id="filterPriceMax" class="form-control" placeholder="Max" oninput="filterProducts()">
+                <<<<<<< HEAD
+                    <!-- Filter Section -->
+                    <div class="card" style="margin-bottom: 1.5rem; padding: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; align-items: end;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="font-size: 0.85rem;">หมวดหมู่</label>
+                                <select id="filterCategory" class="form-control" onchange="filterProducts()">
+                                    <option value="">ทั้งหมด</option>
+                                    <?php foreach ($categories as $cat): ?>
+                                        <option value="<?php echo htmlspecialchars($cat); ?>"><?php echo htmlspecialchars($cat); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label class="form-label" style="font-size: 0.85rem;">สต็อก (Min - Max)</label>
-                            <div style="display: flex; gap: 0.5rem;">
-                                <input type="number" id="filterStockMin" class="form-control" placeholder="Min" oninput="filterProducts()">
-                                <input type="number" id="filterStockMax" class="form-control" placeholder="Max" oninput="filterProducts()">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="font-size: 0.85rem;">สถานะ</label>
+                                <select id="filterStatus" class="form-control" onchange="filterProducts()">
+                                    <option value="">ทั้งหมด</option>
+                                    <option value="ready">พร้อมขาย (Stock 10+)</option>
+                                    <option value="low">ใกล้หมด (Stock < 10)</option>
+                                    <option value="out">สินค้าหมด (Stock 0)</option>
+                                </select>
                             </div>
-                        </div>
-                        <div>
-                            <button class="btn btn-outline" style="width: 100%;" onclick="resetFilters()">
-                                <i class="fa-solid fa-rotate-right"></i> รีเซ็ตตัวกรอง
-                            </button>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="font-size: 0.85rem;">ราคา (Min - Max)</label>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="number" id="filterPriceMin" class="form-control" placeholder="Min" oninput="filterProducts()">
+                                    <input type="number" id="filterPriceMax" class="form-control" placeholder="Max" oninput="filterProducts()">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="font-size: 0.85rem;">สต็อก (Min - Max)</label>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="number" id="filterStockMin" class="form-control" placeholder="Min" oninput="filterProducts()">
+                                    <input type="number" id="filterStockMax" class="form-control" placeholder="Max" oninput="filterProducts()">
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline" style="width: 100%;" onclick="resetFilters()">
+                                    <i class="fa-solid fa-rotate-right"></i> รีเซ็ตตัวกรอง
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card">
-                    <div class="table-container">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50px;">ID</th>
-                                    <th style="width: 60px;">รูปภาพ</th>
-                                    <th>ชื่อสินค้า</th>
-                                    <th>หมวดหมู่</th>
-                                    <th>ราคา</th>
-                                    <th>สต็อกคงเหลือ</th>
-                                    <th>สถานะ</th>
-                                    <th>จัดการ</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($products as $p): ?>
+                    =======
+                    >>>>>>> 419e1fe6a9a8c12060cecd80391c5357e3c669d7
+                    <div class="card">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <td><?php echo $p['product_id']; ?></td>
-                                        <td>
-                                            <div style="width: 40px; height: 40px; background: #f1f5f9; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
-                                                <i class="fa-solid fa-box"></i>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div style="font-weight: 600;"><?php echo $p['product_name']; ?></div>
-                                            <div style="font-size: 0.85rem; color: var(--text-light);"><?php echo $p['category']; ?></div>
-                                        </td>
-                                        <td><?php echo $p['category']; ?></td>
-                                        <td>฿<?php echo number_format($p['price'], 2); ?></td>
-                                        <td><?php echo $p['stock']; ?></td>
-                                        <td>
-                                            <?php if ($p['stock'] == 0): ?>
-                                                <span class="badge badge-danger">สินค้าหมด</span>
-                                            <?php elseif ($p['stock'] < 10): ?>
-                                                <span class="badge badge-warning">ใกล้หมด</span>
-                                            <?php else: ?>
-                                                <span class="badge badge-success">พร้อมขาย</span>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline btn-sm" onclick='openEditModal(<?php echo json_encode($p); ?>)'>
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
-                                            <a href="?delete=<?php echo $p['product_id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('ยืนยันการลบ?');">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </a>
-                                        </td>
+                                        <th style="width: 50px;">ID</th>
+                                        <th style="width: 60px;">รูปภาพ</th>
+                                        <th>ชื่อสินค้า</th>
+                                        <th>หมวดหมู่</th>
+                                        <th>ราคา</th>
+                                        <th>สต็อกคงเหลือ</th>
+                                        <th>สถานะ</th>
+                                        <th>จัดการ</th>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($products as $p): ?>
+                                        <tr>
+                                            <td><?php echo $p['product_id']; ?></td>
+                                            <td>
+                                                <div style="width: 40px; height: 40px; background: #f1f5f9; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                                                    <i class="fa-solid fa-box"></i>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="font-weight: 600;"><?php echo $p['product_name']; ?></div>
+                                                <div style="font-size: 0.85rem; color: var(--text-light);"><?php echo $p['category']; ?></div>
+                                            </td>
+                                            <td><?php echo $p['category']; ?></td>
+                                            <td>฿<?php echo number_format($p['price'], 2); ?></td>
+                                            <td><?php echo $p['stock']; ?></td>
+                                            <td>
+                                                <?php if ($p['stock'] == 0): ?>
+                                                    <span class="badge badge-danger">สินค้าหมด</span>
+                                                <?php elseif ($p['stock'] < 10): ?>
+                                                    <span class="badge badge-warning">ใกล้หมด</span>
+                                                <?php else: ?>
+                                                    <span class="badge badge-success">พร้อมขาย</span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline btn-sm" onclick='openEditModal(<?php echo json_encode($p); ?>)'>
+                                                    <i class="fa-solid fa-pen"></i>
+                                                </button>
+                                                <a href="?delete=<?php echo $p['product_id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('ยืนยันการลบ?');">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
             </div>
         </main>
     </div>
@@ -314,6 +317,7 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
     </div>
 
     <script>
+        << << << < HEAD
         // Search & Filter Function
         function filterProducts() {
             const searchText = document.querySelector('.search-input').value.toLowerCase();
@@ -327,63 +331,79 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             const rows = document.querySelectorAll('.table tbody tr');
 
             rows.forEach(row => {
-                // Get data from row
-                const name = row.querySelector('td:nth-child(3) div:first-child').textContent.toLowerCase();
-                const cat = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
-                const price = parseFloat(row.querySelector('td:nth-child(5)').textContent.replace(/[^\d.]/g, ''));
-                const stock = parseInt(row.querySelector('td:nth-child(6)').textContent);
+                        // Get data from row
+                        const name = row.querySelector('td:nth-child(3) div:first-child').textContent.toLowerCase();
+                        const cat = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+                        const price = parseFloat(row.querySelector('td:nth-child(5)').textContent.replace(/[^\d.]/g, ''));
+                        const stock = parseInt(row.querySelector('td:nth-child(6)').textContent);
 
-                // Check matches
-                const matchesSearch = name.includes(searchText) || cat.includes(searchText);
-                const matchesCategory = category === '' || cat === category;
-                const matchesPrice = price >= priceMin && price <= priceMax;
-                const matchesStock = stock >= stockMin && stock <= stockMax;
+                        // Check matches
+                        const matchesSearch = name.includes(searchText) || cat.includes(searchText);
+                        const matchesCategory = category === '' || cat === category;
+                        const matchesPrice = price >= priceMin && price <= priceMax;
+                        const matchesStock = stock >= stockMin && stock <= stockMax;
 
-                let matchesStatus = true;
-                if (status === 'ready') matchesStatus = stock >= 10;
-                else if (status === 'low') matchesStatus = stock > 0 && stock < 10;
-                else if (status === 'out') matchesStatus = stock === 0;
+                        let matchesStatus = true;
+                        if (status === 'ready') matchesStatus = stock >= 10;
+                        else if (status === 'low') matchesStatus = stock > 0 && stock < 10;
+                        else if (status === 'out') matchesStatus = stock === 0;
 
-                if (matchesSearch && matchesCategory && matchesPrice && matchesStock && matchesStatus) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        }
+                        if (matchesSearch && matchesCategory && matchesPrice && matchesStock && matchesStatus) {
+                            ===
+                            === =
+                            // Search
+                            document.querySelector('.search-input').addEventListener('input', function(e) {
+                                    const searchText = e.target.value.toLowerCase();
+                                    const rows = document.querySelectorAll('.table tbody tr');
 
-        // Attach listener to main search input
-        document.querySelector('.search-input').addEventListener('input', filterProducts);
+                                    rows.forEach(row => {
+                                        const text = row.textContent.toLowerCase();
+                                        if (text.includes(searchText)) {
+                                            >>>
+                                            >>> > 419e1 fe6a9a8c12060cecd80391c5357e3c669d7
+                                            row.style.display = '';
+                                        } else {
+                                            row.style.display = 'none';
+                                        }
+                                    }); <<
+                                    << << < HEAD
+                                }
 
-        // Reset Filters
-        function resetFilters() {
-            document.querySelector('.search-input').value = '';
-            document.getElementById('filterCategory').value = '';
-            document.getElementById('filterStatus').value = '';
-            document.getElementById('filterPriceMin').value = '';
-            document.getElementById('filterPriceMax').value = '';
-            document.getElementById('filterStockMin').value = '';
-            document.getElementById('filterStockMax').value = '';
-            filterProducts();
-        }
+                                // Attach listener to main search input
+                                document.querySelector('.search-input').addEventListener('input', filterProducts);
 
-        // Open Edit Modal
-        function openEditModal(product) {
-            document.getElementById('edit_product_id').value = product.product_id;
-            document.getElementById('edit_product_name').value = product.product_name;
-            document.getElementById('edit_category').value = product.category;
-            document.getElementById('edit_price').value = product.price;
-            document.getElementById('edit_stock').value = product.stock;
+                                // Reset Filters
+                                function resetFilters() {
+                                    document.querySelector('.search-input').value = '';
+                                    document.getElementById('filterCategory').value = '';
+                                    document.getElementById('filterStatus').value = '';
+                                    document.getElementById('filterPriceMin').value = '';
+                                    document.getElementById('filterPriceMax').value = '';
+                                    document.getElementById('filterStockMin').value = '';
+                                    document.getElementById('filterStockMax').value = '';
+                                    filterProducts();
+                                } ===
+                                === =
+                            }); >>>
+                        >>> > 419e1 fe6a9a8c12060cecd80391c5357e3c669d7
 
-            document.getElementById('editProductModal').style.display = 'flex';
-        }
+                        // Open Edit Modal
+                        function openEditModal(product) {
+                            document.getElementById('edit_product_id').value = product.product_id;
+                            document.getElementById('edit_product_name').value = product.product_name;
+                            document.getElementById('edit_category').value = product.category;
+                            document.getElementById('edit_price').value = product.price;
+                            document.getElementById('edit_stock').value = product.stock;
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.style.display = "none";
-            }
-        }
+                            document.getElementById('editProductModal').style.display = 'flex';
+                        }
+
+                        // Close modal when clicking outside
+                        window.onclick = function(event) {
+                            if (event.target.classList.contains('modal-overlay')) {
+                                event.target.style.display = "none";
+                            }
+                        }
     </script>
 </body>
 

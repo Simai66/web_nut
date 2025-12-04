@@ -507,58 +507,66 @@ $customers = $cust_stmt->fetchAll();
                             </div>
                             <div class="select-dropdown" id="customerDropdown" style="display:none; position:absolute; top:100%; left:0; width:100%; background:white; border:1px solid var(--border-color); border-radius:0.5rem; margin-top:0.25rem; z-index:100; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); max-height:200px; overflow-y:auto;">
                                 <div style="padding:0.5rem; position:sticky; top:0; background:white; border-bottom:1px solid var(--border-color);">
-                                    <input type="text" id="customerSearch" placeholder="ค้นหาลูกค้า (ชื่อ, เบอร์โทร)..." style="width:100%; padding:0.25rem 0.5rem; border:1px solid var(--border-color); border-radius:0.25rem;" oninput="filterCustomers(this.value)">
+                                    <<<<<<< HEAD
+                                        <input type="text" id="customerSearch" placeholder="ค้นหาลูกค้า (ชื่อ, เบอร์โทร)..." style="width:100%; padding:0.25rem 0.5rem; border:1px solid var(--border-color); border-radius:0.25rem;" oninput="filterCustomers(this.value)">
+                                        =======
+                                        <input type="text" id="customerSearch" placeholder="ค้นหาลูกค้า..." style="width:100%; padding:0.25rem 0.5rem; border:1px solid var(--border-color); border-radius:0.25rem;" oninput="filterCustomers(this.value)">
+                                        >>>>>>> 419e1fe6a9a8c12060cecd80391c5357e3c669d7
                                 </div>
                                 <div class="option" onclick="selectCustomer(1, 'Unknown')" style="padding:0.5rem; cursor:pointer; border-bottom:1px solid #f1f5f9;">Unknown</div>
                                 <?php foreach ($customers as $c): ?>
                                     <?php if ($c['customer_id'] != 1): ?>
-                                        <div class="option customer-option" onclick="selectCustomer(<?php echo $c['customer_id']; ?>, '<?php echo htmlspecialchars($c['customer_name']); ?>')" style="padding:0.5rem; cursor:pointer; border-bottom:1px solid #f1f5f9;">
+                                        <<<<<<< HEAD
+                                            <div class="option customer-option" onclick="selectCustomer(<?php echo $c['customer_id']; ?>, '<?php echo htmlspecialchars($c['customer_name']); ?>')" style="padding:0.5rem; cursor:pointer; border-bottom:1px solid #f1f5f9;">
                                             <?php echo htmlspecialchars($c['customer_name']); ?>
                                             <?php if (!empty($c['phone'])): ?>
                                                 <span style="font-size:0.85em; color:#64748b; margin-left:0.5rem;">
                                                     <i class="fa-solid fa-phone" style="font-size:0.75em;"></i> <?php echo htmlspecialchars($c['phone']); ?>
                                                 </span>
                                             <?php endif; ?>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
                             </div>
+                            =======
+                            <div class="option customer-option" onclick="selectCustomer(<?php echo $c['customer_id']; ?>, '<?php echo htmlspecialchars($c['customer_name']); ?>')" style="padding:0.5rem; cursor:pointer; border-bottom:1px solid #f1f5f9;"><?php echo htmlspecialchars($c['customer_name']); ?></div>
+                            >>>>>>> 419e1fe6a9a8c12060cecd80391c5357e3c669d7
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                         </div>
-                        <button class="btn btn-outline" style="padding:0.5rem;" onclick="document.getElementById('addCustomerModal').style.display='flex'">
-                            <i class="fa-solid fa-user-plus"></i>
-                        </button>
                     </div>
-                    <input type="hidden" id="selectedCustomerId" value="1">
+                    <button class="btn btn-outline" style="padding:0.5rem;" onclick="document.getElementById('addCustomerModal').style.display='flex'">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </button>
                 </div>
-            </div>
-
-            <div class="cart-items-container" id="cartItems">
-                <div class="empty-cart">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                    <p>ยังไม่มีสินค้าในตะกร้า</p>
-                    <p style="font-size:0.85rem; margin-top:0.5rem;">เลือกสินค้าจากด้านซ้ายเพื่อเริ่มขาย</p>
-                </div>
-            </div>
-
-            <div class="cart-footer">
-                <div class="summary-row">
-                    <span>ยอดรวมสินค้า</span>
-                    <span id="subtotal">฿0.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>ภาษี (7%)</span>
-                    <span id="tax">฿0.00</span>
-                </div>
-                <div class="summary-row total">
-                    <span>ยอดสุทธิ</span>
-                    <span id="grandTotal" style="color:var(--primary-color);">฿0.00</span>
-                </div>
-                <button class="checkout-btn" onclick="checkout()">
-                    <span>ชำระเงิน</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                <input type="hidden" id="selectedCustomerId" value="1">
             </div>
         </div>
+
+        <div class="cart-items-container" id="cartItems">
+            <div class="empty-cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p>ยังไม่มีสินค้าในตะกร้า</p>
+                <p style="font-size:0.85rem; margin-top:0.5rem;">เลือกสินค้าจากด้านซ้ายเพื่อเริ่มขาย</p>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="summary-row">
+                <span>ยอดรวมสินค้า</span>
+                <span id="subtotal">฿0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>ภาษี (7%)</span>
+                <span id="tax">฿0.00</span>
+            </div>
+            <div class="summary-row total">
+                <span>ยอดสุทธิ</span>
+                <span id="grandTotal" style="color:var(--primary-color);">฿0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                <span>ชำระเงิน</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
     </div>
 
     <!-- Add Customer Modal -->
@@ -641,7 +649,8 @@ $customers = $cust_stmt->fetchAll();
                         newOption.className = 'option customer-option';
                         newOption.style.padding = '0.5rem';
                         newOption.style.cursor = 'pointer';
-                        newOption.style.borderBottom = '1px solid #f1f5f9';
+                        newOption.style.borderBottom = '1px solid #f1f5f9'; <<
+                        << << < HEAD
 
                         let html = data.customer_name;
                         if (phone) {
@@ -651,6 +660,10 @@ $customers = $cust_stmt->fetchAll();
                         }
                         newOption.innerHTML = html;
 
+                        ===
+                        === =
+                        newOption.textContent = data.customer_name; >>>
+                        >>> > 419e1 fe6a9a8c12060cecd80391c5357e3c669d7
                         newOption.onclick = function() {
                             selectCustomer(data.customer_id, data.customer_name);
                         };
