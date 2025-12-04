@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ระบบจัดการร้านเสื้อผ้า (Clothery System) - โปรเจกต์ระบบฐานข้อมูล AIE313 มหาวิทยาลัยกรุงเทพ">
+    <title>Clothery System | ระบบจัดการร้านเสื้อผ้า</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-icon">👕</span>
+                <span class="brand-text">Clothery System</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">ภาพรวม</a></li>
+                <li><a href="#features" class="nav-link">ฟีเจอร์</a></li>
+                <li><a href="#database" class="nav-link">ฐานข้อมูล</a></li>
+                <li><a href="#tech" class="nav-link">เทคโนโลยี</a></li>
+                <li><a href="#team" class="nav-link">ทีมงาน</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🎓</span>
+                        <span>AIE313 – Database System</span>
+                    </div>
+                    <h1 class="hero-title">
+                        ระบบจัดการร้านเสื้อผ้า<br>
+                        <span class="gradient-text">(Clothery System)</span>
+                    </h1>
+                    <p class="hero-subtitle">Clothing Store Management System Using PHP and MySQL</p>
+                    <p class="hero-description">
+                        ระบบจัดการร้านเสื้อผ้าแบบครบวงจร ที่ช่วยแก้ปัญหาการจัดการสินค้า สต็อก และยอดขาย
+                        สำหรับร้านค้าขนาดกลางและขนาดเล็ก ด้วยเทคโนโลยีเว็บแอปพลิเคชันที่ทันสมัย
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#features" class="btn btn-primary">
+                            <span>ดูฟีเจอร์ระบบ</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                        <a href="#database" class="btn btn-secondary">
+                            <span>ดูการออกแบบฐานข้อมูล</span>
+                            <span class="btn-icon">🗄️</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="mockup-container">
+                        <img src="images/dashboard_mockup.png" alt="Clothery System Dashboard" class="dashboard-mockup">
+                        <div class="mockup-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section section-overview" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">ภาพรวมโปรเจกต์</span>
+                <h2 class="section-title">ปัญหาและโซลูชัน</h2>
+                <p class="section-description">
+                    แก้ไขปัญหาการจัดการข้อมูลของร้านค้าเสื้อผ้าด้วยระบบที่มีประสิทธิภาพ
+                </p>
+            </div>
+
+            <div class="overview-grid">
+                <div class="overview-card problem-card">
+                    <div class="card-icon problem-icon">⚠️</div>
+                    <h3 class="card-title">ปัญหาที่พบ</h3>
+                    <ul class="problem-list">
+                        <li>
+                            <span class="list-icon">❌</span>
+                            <div>
+                                <strong>การจัดการด้วย Excel หรือกระดาษ</strong>
+                                <p>ข้อมูลไม่เป็นระบบ ง่ายต่อการสูญหาย</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">❌</span>
+                            <div>
+                                <strong>ข้อมูลซ้ำซ้อนและไม่แม่นยำ</strong>
+                                <p>เกิดความผิดพลาดในการบันทึกข้อมูล</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">❌</span>
+                            <div>
+                                <strong>ไม่สามารถติดตามสต็อกแบบ Real-time</strong>
+                                <p>ไม่ทราบยอดคงเหลือสินค้าที่แท้จริง</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">❌</span>
+                            <div>
+                                <strong>ไม่มีรายงานการขายที่ชัดเจน</strong>
+                                <p>ไม่สามารถวิเคราะห์ยอดขายและวางแผนได้</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="overview-card solution-card">
+                    <div class="card-icon solution-icon">✨</div>
+                    <h3 class="card-title">โซลูชัน: Clothery System</h3>
+                    <ul class="solution-list">
+                        <li>
+                            <span class="list-icon">✅</span>
+                            <div>
+                                <strong>ระบบจัดการแบบรวมศูนย์</strong>
+                                <p>เข้าถึงข้อมูลได้จากที่เดียว ผ่านเว็บเบราว์เซอร์</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">✅</span>
+                            <div>
+                                <strong>ฐานข้อมูลที่ถูกออกแบบอย่างดี</strong>
+                                <p>Normalization ถึง 3NF ลดความซ้ำซ้อน</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">✅</span>
+                            <div>
+                                <strong>ติดตามสต็อกแบบ Real-time</strong>
+                                <p>อัพเดทสต็อกทันทีเมื่อมีการขาย/รับสินค้า</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-icon">✅</span>
+                            <div>
+                                <strong>รายงานและ Dashboard</strong>
+                                <p>วิเคราะห์ยอดขาย สินค้าขายดี และแจ้งเตือนสต็อกต่ำ</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Features -->
+    <section class="section section-features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">ระบบฟีเจอร์</span>
+                <h2 class="section-title">ความสามารถหลักของระบบ</h2>
+                <p class="section-description">
+                    ฟีเจอร์ครบครัน ตอบโจทย์การจัดการร้านเสื้อผ้าทุกด้าน
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">จัดการสินค้า</h3>
+                    <p class="feature-description">
+                        เพิ่ม แก้ไข ลบข้อมูลสินค้า พร้อมรูปภาพ ราคา และรายละเอียด
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">ตัวเลือกสินค้า</h3>
+                    <p class="feature-description">
+                        กำหนดสี และไซส์ของสินค้าแต่ละชิ้นได้อย่างละเอียด
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">ระบบขาย</h3>
+                    <p class="feature-description">
+                        บันทึกคำสั่งซื้อ รายการสินค้า และคำนวณยอดขายอัตโนมัติ
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">ติดตามสต็อก Real-time</h3>
+                    <p class="feature-description">
+                        ดูยอดคงเหลือสินค้าแบบทันที อัพเดทอัตโนมัติเมื่อมีการซื้อขาย
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">ข้อมูลลูกค้า</h3>
+                    <p class="feature-description">
+                        จัดเก็บข้อมูลลูกค้า ประวัติการซื้อ และข้อมูลติดต่อ
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3 class="feature-title">จัดการซัพพลายเออร์</h3>
+                    <p class="feature-description">
+                        บันทึกข้อมูลผู้จัดจำหน่าย และใบสั่งซื้อสินค้า
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">รายการเคลื่อนไหวสต็อก</h3>
+                    <p class="feature-description">
+                        ติดตามประวัติการรับ-จ่ายสินค้าทุกรายการอย่างละเอียด
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">รายงานและ Dashboard</h3>
+                    <p class="feature-description">
+                        ดูสรุปยอดขาย สินค้าขายดี และแจ้งเตือนสต็อกต่ำ
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3 class="feature-title">ระบบ Login</h3>
+                    <p class="feature-description">
+                        User Login และการกำหนดสิทธิ์การใช้งานตามบทบาท
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Design -->
+    <section class="section section-database" id="database">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">การออกแบบฐานข้อมูล</span>
+                <h2 class="section-title">สถาปัตยกรรมฐานข้อมูล</h2>
+                <p class="section-description">
+                    ออกแบบด้วย ER-Diagram และ Normalized ถึง 3NF เพื่อความถูกต้องและมีประสิทธิภาพ
+                </p>
+            </div>
+
+            <div class="database-content">
+                <div class="database-diagram">
+                    <img src="images/er_diagram.png" alt="ER Diagram" class="er-diagram-img">
+                </div>
+
+                <div class="database-info">
+                    <div class="info-card">
+                        <div class="info-icon">🗺️</div>
+                        <h3>ER-Diagram</h3>
+                        <p>ออกแบบความสัมพันธ์ระหว่างตารางต่างๆ อย่างชัดเจน แสดง Entity และ Relationship ครบถ้วน</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">🔗</div>
+                        <h3>Relational Schema</h3>
+                        <p>แปลง ER-Diagram เป็น Relational Schema พร้อม Primary Key และ Foreign Key ที่สมบูรณ์</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">✅</div>
+                        <h3>Normalization ถึง 3NF</h3>
+                        <p>ลดความซ้ำซ้อนของข้อมูล ป้องกันความผิดพลาด และเพิ่มประสิทธิภาพการจัดเก็บ</p>
+                    </div>
+                </div>
+
+                <div class="schema-tables">
+                    <h3 class="schema-title">ตารางหลักในระบบ</h3>
+                    <div class="tables-grid">
+                        <div class="table-box">
+                            <div class="table-header">products</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> product_id<br>
+                                product_name, price, description
+                            </div>
+                        </div>
+
+                        <div class="table-box">
+                            <div class="table-header">product_variants</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> variant_id<br>
+                                <span class="field-key">FK</span> product_id<br>
+                                color, size, stock_quantity
+                            </div>
+                        </div>
+
+                        <div class="table-box">
+                            <div class="table-header">customers</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> customer_id<br>
+                                name, email, phone, address
+                            </div>
+                        </div>
+
+                        <div class="table-box">
+                            <div class="table-header">sales_orders</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> order_id<br>
+                                <span class="field-key">FK</span> customer_id<br>
+                                order_date, total_amount
+                            </div>
+                        </div>
+
+                        <div class="table-box">
+                            <div class="table-header">sales_order_items</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> item_id<br>
+                                <span class="field-key">FK</span> order_id, variant_id<br>
+                                quantity, unit_price
+                            </div>
+                        </div>
+
+                        <div class="table-box">
+                            <div class="table-header">suppliers</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> supplier_id<br>
+                                name, contact, email
+                            </div>
+                        </div>
+
+                        <div class="table-box">
+                            <div class="table-header">purchase_orders</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> purchase_id<br>
+                                <span class="field-key">FK</span> supplier_id<br>
+                                order_date, total_cost
+                            </div>
+                        </div>
+
+                        <div class="table-box">
+                            <div class="table-header">stock_movements</div>
+                            <div class="table-fields">
+                                <span class="field-key">PK</span> movement_id<br>
+                                <span class="field-key">FK</span> variant_id<br>
+                                type, quantity, date
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="section section-tech" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">เทคโนโลยี</span>
+                <h2 class="section-title">Technology Stack & Tools</h2>
+                <p class="section-description">
+                    เครื่องมือและเทคโนโลยีที่ใช้ในการพัฒนาระบบ
+                </p>
+            </div>
+
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Backend & Database</h3>
+                    <div class="tech-grid">
+                        <div class="tech-badge">
+                            <span class="tech-icon">🐘</span>
+                            <div>
+                                <div class="tech-name">PHP</div>
+                                <div class="tech-desc">Server-side scripting</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">🗄️</span>
+                            <div>
+                                <div class="tech-name">MySQL</div>
+                                <div class="tech-desc">Relational database</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">⚙️</span>
+                            <div>
+                                <div class="tech-name">phpMyAdmin</div>
+                                <div class="tech-desc">Database management</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Frontend</h3>
+                    <div class="tech-grid">
+                        <div class="tech-badge">
+                            <span class="tech-icon">📄</span>
+                            <div>
+                                <div class="tech-name">HTML</div>
+                                <div class="tech-desc">Structure & content</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">🎨</span>
+                            <div>
+                                <div class="tech-name">CSS</div>
+                                <div class="tech-desc">Styling & layout</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">⚡</span>
+                            <div>
+                                <div class="tech-name">JavaScript</div>
+                                <div class="tech-desc">Interactivity</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Development Tools</h3>
+                    <div class="tech-grid">
+                        <div class="tech-badge">
+                            <span class="tech-icon">💻</span>
+                            <div>
+                                <div class="tech-name">VS Code</div>
+                                <div class="tech-desc">Code editor</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">📐</span>
+                            <div>
+                                <div class="tech-name">Draw.io</div>
+                                <div class="tech-desc">ER-Diagram design</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">🛢️</span>
+                            <div>
+                                <div class="tech-name">MySQL Workbench</div>
+                                <div class="tech-desc">Database design</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Analytics & Hosting</h3>
+                    <div class="tech-grid">
+                        <div class="tech-badge">
+                            <span class="tech-icon">🐼</span>
+                            <div>
+                                <div class="tech-name">Pandas</div>
+                                <div class="tech-desc">Data analysis</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">📊</span>
+                            <div>
+                                <div class="tech-name">Excel</div>
+                                <div class="tech-desc">Report generation</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">🌐</span>
+                            <div>
+                                <div class="tech-name">Awardspace.net</div>
+                                <div class="tech-desc">Web hosting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard & Reporting -->
+    <section class="section section-dashboard" id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">รายงานและวิเคราะห์</span>
+                <h2 class="section-title">Dashboard & Reporting</h2>
+                <p class="section-description">
+                    วิเคราะห์ข้อมูลด้วย Dashboard และ รายงานแบบ Real-time
+                </p>
+            </div>
+
+            <div class="dashboard-showcase">
+                <div class="dashboard-image">
+                    <img src="images/analytics_dashboard.png" alt="Analytics Dashboard" class="analytics-img">
+                </div>
+
+                <div class="dashboard-features">
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-icon">📅</div>
+                        <div class="dashboard-feature-content">
+                            <h4>รายงานยอดขายรายวัน/รายเดือน</h4>
+                            <p>ติดตามยอดขายแบบ Real-time พร้อมกราฟแสดงแนวโน้ม เปรียบเทียบยอดขายแต่ละช่วงเวลา</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-icon">🏆</div>
+                        <div class="dashboard-feature-content">
+                            <h4>สินค้าขายดี Top 10</h4>
+                            <p>แสดงสินค้าที่ขายดีที่สุด วิเคราะห์สินค้าที่ควรเพิ่มสต็อก และวางแผนการสั่งซื้อ</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-icon">⚠️</div>
+                        <div class="dashboard-feature-content">
+                            <h4>แจ้งเตือนสต็อกต่ำ</h4>
+                            <p>ระบบแจ้งเตือนอัตโนมัติเมื่อสต็อกสินค้าใกล้หมด ป้องกันการขาดสต็อก</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-icon">💹</div>
+                        <div class="dashboard-feature-content">
+                            <h4>KPI Dashboard</h4>
+                            <p>แสดงตัวเลขสำคัญ เช่น ยอดขายรวม จำนวนออเดอร์ สินค้าคงเหลือ ในหน้าเดียว</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Course Info -->
+    <section class="section section-team" id="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">ทีมผู้พัฒนา</span>
+                <h2 class="section-title">ทีมงานและรายละเอียดวิชา</h2>
+                <p class="section-description">
+                    โปรเจกต์รายวิชาระบบฐานข้อมูล คณะวิศวกรรมศาสตร์ มหาวิทยาลัยกรุงเทพ
+                </p>
+            </div>
+
+            <div class="course-info-box">
+                <div class="course-icon">🎓</div>
+                <div class="course-details">
+                    <h3>AIE313 – Database System</h3>
+                    <p>คณะวิศวกรรมศาสตร์ มหาวิทยาลัยกรุงเทพ</p>
+                    <p>Faculty of Engineering, Bangkok University</p>
+                </div>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-circle">
+                            <span class="avatar-initial">ว</span>
+                        </div>
+                        <div class="avatar-glow"></div>
+                    </div>
+                    <h3 class="member-name">นาย วีระณัฐ ศิลาขาว</h3>
+                    <p class="member-id">รหัสนักศึกษา: 1660903251</p>
+                    <div class="member-role">Developer & Database Designer</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-circle">
+                            <span class="avatar-initial">ศ</span>
+                        </div>
+                        <div class="avatar-glow"></div>
+                    </div>
+                    <h3 class="member-name">นาย ศุภณัฐ พันธ์เขียว</h3>
+                    <p class="member-id">รหัสนักศึกษา: 1660903269</p>
+                    <div class="member-role">Developer & System Analyst</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="section section-conclusion" id="conclusion">
+        <div class="container">
+            <div class="conclusion-content">
+                <div class="conclusion-main">
+                    <h2 class="conclusion-title">สรุปและประโยชน์ของระบบ</h2>
+                    <p class="conclusion-text">
+                        ระบบ Clothery System ช่วยให้เจ้าของร้านเสื้อผ้าสามารถจัดการธุรกิจได้อย่างมีประสิทธิภาพมากขึ้น
+                        ด้วยการติดตามสต็อกที่แม่นยำ ลดความผิดพลาดจากการบันทึกข้อมูลด้วยตนเอง
+                        และสามารถวิเคราะห์ยอดขายเพื่อวางแผนธุรกิจได้ดีขึ้น ระบบนี้ถูกออกแบบมาเพื่อแก้ปัญหาที่แท้จริง
+                        ของร้านค้าขนาดกลางและขนาดเล็ก โดยใช้เทคโนโลยีที่เข้าถึงง่ายและมีต้นทุนต่ำ
+                    </p>
+
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>ความแม่นยำของข้อมูลสต็อกเพิ่มขึ้น</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>ประหยัดเวลาในการจัดการข้อมูล</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>วิเคราะห์ยอดขายได้ง่ายและรวดเร็ว</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>จัดการธุรกิจได้ในที่เดียว</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="future-improvements">
+                    <h3 class="future-title">🚀 แนวทางการพัฒนาในอนาคต</h3>
+                    <ul class="future-list">
+                        <li>
+                            <strong>ระบบร้านค้าออนไลน์แบบครบวงจร</strong>
+                            <p>เชื่อมต่อกับหน้าร้านออนไลน์ให้ลูกค้าสั่งซื้อสินค้าได้โดยตรง</p>
+                        </li>
+                        <li>
+                            <strong>รองรับหลายสาขา (Multi-branch)</strong>
+                            <p>จัดการสต็อกและยอดขายของหลายสาขาในระบบเดียว</p>
+                        </li>
+                        <li>
+                            <strong>Mobile Application</strong>
+                            <p>พัฒนาแอปพลิเคชันมือถือสำหรับเจ้าของร้านและพนักงาน</p>
+                        </li>
+                        <li>
+                            <strong>Advanced Analytics with AI</strong>
+                            <p>ใช้ Machine Learning ในการทำนายยอดขายและแนะนำการสั่งซื้อสินค้า</p>
+                        </li>
+                        <li>
+                            <strong>การวิเคราะห์ตามบทบาท (Role-based Analytics)</strong>
+                            <p>แสดงรายงานและข้อมูลที่เหมาะสมกับแต่ละบทบาทผู้ใช้</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="brand-icon">👕</span>
+                        <span class="brand-text">Clothery System</span>
+                    </div>
+                    <p class="footer-tagline">
+                        ระบบจัดการร้านเสื้อผ้าแบบครบวงจร<br>
+                        โครงงานวิชา AIE313 Database System
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>เนื้อหา</h4>
+                        <ul>
+                            <li><a href="#overview">ภาพรวม</a></li>
+                            <li><a href="#features">ฟีเจอร์</a></li>
+                            <li><a href="#database">ฐานข้อมูล</a></li>
+                            <li><a href="#tech">เทคโนโลยี</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>ข้อมูลโครงการ</h4>
+                        <ul>
+                            <li>AIE313 – Database System</li>
+                            <li>มหาวิทยาลัยกรุงเทพ</li>
+                            <li>คณะวิศวกรรมศาสตร์</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Clothery System. All rights reserved.</p>
+                <p>Created by วีระณัฐ ศิลาขาว และ ศุภณัฐ พันธ์เขียว</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
